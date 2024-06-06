@@ -1,17 +1,16 @@
-require('dotenv').config({ path: '../.env' });
+//route define here
 
-//initial express
 const express = require('express');
+const router = require('./routes');
+const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 3000;
+app.use(cors());
 
-//middleware
 app.use(express.json());
 
+
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('hello');
 })
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-})
+
