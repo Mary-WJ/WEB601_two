@@ -1,7 +1,3 @@
 .env
-<<<<<<< HEAD
 node_modules
 app/auth/
-=======
-//nodemodule
->>>>>>> d8b2aaa438112104ef5534fb9ed7ce4a85542017
