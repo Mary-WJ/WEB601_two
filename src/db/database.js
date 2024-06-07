@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../../.env' });   //connect to mangodb
+require('dotenv').config({ path: '../../.env' });   //connect to mangodb and port
 
 const mongoose = require('mongoose');
 const express = require('express');
