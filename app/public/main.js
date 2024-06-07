@@ -9,8 +9,9 @@ noteForm.addEventListener("submit", (e) => {
     const titleValue = noteTitle.value;
     if(!titleValue){
         alert("title can't be empty");
+    }else{
     }
-    const contentValue = noteContent.value;
+
 
 
 })

@@ -73,7 +73,8 @@ form input{
 }
 
 form button{
-    padding: 10px;
+    font-size: 1.2em;
+    padding: 13px;
     border: none;
     border-radius: 15px;
     justify-self: center;
@@ -134,8 +135,13 @@ nav .profileIcon{
 .sideBar{
     background-color: rgb(175, 146, 146);
     height: 83vh;
+    border-radius: 30px;
+    margin: 25px;
+    margin-bottom: 10px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    
 }
-
 
 #links{
     display: flex;
@@ -165,9 +171,12 @@ nav .profileIcon{
 
 .workMain{
     background-color: rgb(200, 183, 216);
-    height: 83vh;
-    margin: 0px;
-    padding: 0px
+    height: 87vh;
+    padding: 0px;
+    /* border-radius: 10px;
+    margin-top: 20px; 
+    margin-right: 20px; */
+    margin-bottom: 0px; 
 }
 
 
@@ -175,28 +184,33 @@ nav .profileIcon{
 
 #createNote{
     display: grid;
-    margin: 50px;
-    margin-top:20px ;
+    margin: 30px;
+     /* margin-top:20px;
+    margin-bottom: 0px; */
+   
 }
-
 
 
 
 #createNote form .titleHeader{
-    height: 40px;
+    height: 45px;
     margin: 0;
-    padding-left: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
     border: none;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
     border-radius: 10px 10px 0.5px 1.5px;
+    /* background-color: rgb(106, 110, 150); */
+    color: black;
 }
 
 #createNote form .content{
-    height: 400px;
+    height: 500px;
     border: none;
     border-radius: 0.5px 1.5px 10px 10px;
-    padding: 10px;
+    padding: 20px;
+    /* background-color: rgb(204, 222, 237); */
 }
 
 
@@ -208,21 +222,22 @@ nav .profileIcon{
     display: flex;
     justify-content: center; 
     margin: 0px;
-    margin-top: 20px;
-    gap: 30px; /* Adds space between the buttons */
+    margin-top: 40px;
+    gap: 35px; /* Adds space between the buttons */
 }
 
 
 
 footer{
     margin: 0px;
+    font-size: 15px;
     padding-top: 10px;
     text-align: center;
-    background-color: rgb(221, 245, 245);
-    height: 50px;
-
+    background-color: rgb(87, 141, 202);
+    height: auto;
 }
 
 footer p{
     margin: 0px;
+    color: black;
 }
