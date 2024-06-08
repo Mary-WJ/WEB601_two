@@ -1,16 +1,28 @@
-body{
+* {
+    box-sizing: border-box;
+ }
+
+
+html, body{
     margin: 0px;
     padding: 0px;
     height: 100%;
+<<<<<<< HEAD
     min-height: 100%;
     font-family: "Lato", sans-serif;   
 
+=======
+    font-family: "Lato", sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+>>>>>>> bc56b82f0283dbeacdd2d6977457cb394f68d2b0
 }
 
 header{
     background-color: rgb(187, 175, 175);
     height: 80px;
-    width: 100%;  
+    width: 100vw;  
     margin: 0px;
     padding: 0px;
 }
@@ -32,6 +44,7 @@ main{
     padding: 0;
     margin-top: 30px;
     padding-left: 30px;
+
 }
 
 main #container{
@@ -170,22 +183,20 @@ nav .profileIcon{
 
 .workMain{
     background-color: rgb(200, 183, 216);
+<<<<<<< HEAD
     height: 100vh;
+=======
+>>>>>>> bc56b82f0283dbeacdd2d6977457cb394f68d2b0
     padding: 0px;
-    /* border-radius: 10px;
-    margin-top: 20px; 
-    margin-right: 20px; */
-    margin-bottom: 0px; 
 }
-
 
 
 
 #createNote{
     display: grid;
-    margin: 30px;
-     /* margin-top:20px;
-    margin-bottom: 0px; */
+    margin: 20px;
+    margin-bottom: 0px; 
+
    
 }
 
@@ -200,12 +211,11 @@ nav .profileIcon{
     font-size: 1.5em;
     font-weight: bold;
     border-radius: 10px 10px 0.5px 1.5px;
-    /* background-color: rgb(106, 110, 150); */
     color: black;
 }
 
 #createNote form .content{
-    height: 500px;
+    height: 550px;
     border: none;
     border-radius: 0.5px 1.5px 10px 10px;
     padding: 20px;
@@ -221,19 +231,23 @@ nav .profileIcon{
     display: flex;
     justify-content: center; 
     margin: 0px;
-    margin-top: 40px;
-    gap: 35px; /* Adds space between the buttons */
+    margin-top: 20px;
+    gap: 35px;
+}
+
+.button-container button{
+  background-color: rgb(185, 124, 220);
+  font-size: 1em;
 }
 
 
 
 footer{
     margin: 0px;
+    padding: 15px;
     font-size: 15px;
-    padding-top: 10px;
     text-align: center;
     background-color: rgb(87, 141, 202);
-    height: auto;
 }
 
 footer p{
