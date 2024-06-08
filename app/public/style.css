@@ -7,16 +7,10 @@ html, body{
     margin: 0px;
     padding: 0px;
     height: 100%;
-<<<<<<< HEAD
-    min-height: 100%;
-    font-family: "Lato", sans-serif;   
-
-=======
     font-family: "Lato", sans-serif;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
->>>>>>> bc56b82f0283dbeacdd2d6977457cb394f68d2b0
 }
 
 header{
@@ -183,10 +177,6 @@ nav .profileIcon{
 
 .workMain{
     background-color: rgb(200, 183, 216);
-<<<<<<< HEAD
-    height: 100vh;
-=======
->>>>>>> bc56b82f0283dbeacdd2d6977457cb394f68d2b0
     padding: 0px;
 }
 
