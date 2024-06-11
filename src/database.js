@@ -1,7 +1,13 @@
-require('dotenv').config({ path: '../.env' });
-const mongoose = require('mongoose');
-const Note = require('./model.js');
+//database connection
 
+require('dotenv').config({ path: '../.env' }); //to connect to the .env file where the credentials are stored
+
+//initialize mangoose package
+const mongoose = require('mongoose');
+
+
+//connect to database using mongoose
+//connectDB() function is defined below so can connect exports later for use
 function connectDB() {
     const dbUser = process.env.DB_USERNAME;
     const dbPass = process.env.DB_PASSWORD;
@@ -18,4 +24,5 @@ function connectDB() {
 }
 
 
+//export the db connection
 module.exports = { connectDB };	

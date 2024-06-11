@@ -1,8 +1,9 @@
-//route define here
+//the .env file reference
 require('dotenv').config({ path: '../.env' });
 
-//import
+//import the database connection function mongodb
 const { connectDB } = require('./database.js'); 
+//the model schema is imported
 const Note = require('./model.js'); 
 
 //initialize packages
@@ -23,6 +24,8 @@ app.use(express.static('../app/public'));
 const PORT = process.env.PORT || 3000;
 
 
+
+//Routes define from below here
 
 //get all notes
 app.get('/api/notes', async (req, res) => {
@@ -101,10 +104,6 @@ app.delete('/api/notes/:id', async (req, res) => {
         res.status(500).json({ error: 'Failed to delete note' });
     }
 });
-
-
-
-
 
 
 
