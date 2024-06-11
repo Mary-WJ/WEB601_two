@@ -177,6 +177,7 @@ nav .profileIcon{
 
 .workMain{
     background-color: rgb(200, 183, 216);
+    /* background-color: rgb(229, 181, 181); */
     padding: 0px;
 }
 
@@ -227,13 +228,14 @@ nav .profileIcon{
 }
 
 .button-container button{
-  background-color: rgb(185, 124, 220);
-  font-size: 1em;
+  background-color:#4242fff2;
+  color: white;
+  font-size: 1.1em;
 }
 
 
 
-footer{
+/* footer{
     margin: 0px;
     padding: 15px;
     font-size: 15px;
@@ -244,7 +246,7 @@ footer{
 footer p{
     margin: 0px;
     color: black;
-}
+} */
 
 
 /* search bar by filtering */
@@ -260,16 +262,17 @@ footer p{
     margin: 20px;
     border-radius: 10px;
     border: none;
+    background-color: rgb(237, 204, 162);
 }
 
 #searchInput:focus{
-    outline: darkblue 3px solid;	
+    outline: 2px solid black;	
 }
 
 #search{
     padding: 10px 15px;
     border-radius: 10px;
-    background-color: bisque;
+    background-color: rgb(246, 204, 154);
     cursor: pointer;
     font-size: 20px;
 }
@@ -279,37 +282,33 @@ footer p{
 }
 
 
-#allNotes{
-    margin: 10px auto;
-    margin-bottom: 60px;
-    padding: 50px;
-    border: 10px solid #62458b;
-    background-color: rgb(230, 231, 230);
-    border-radius: 5px;
-    width: 60vw;
-    height: 80vh;
-    overflow-y: scroll;
+
+#notes{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
+    gap: 30px;
+    margin: 20px;  
+    padding: 20px;
 }
+
+.note {
+    height: 180px;
+    background-color: #F8F8F8;
+    border: 5px solid #F8F8F8; 
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.50) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 
 
 
 
 #viewAll{
     text-align: center;
-    font-size: 1.8em;
+    font-size: 2em;
     margin-top: 40px;
-} 
-
-
-.note{
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 30px;
-    margin: 20px;
-    max-height: 180px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;   
 } 
 
 .note-description{
@@ -323,7 +322,8 @@ footer p{
     display: flex;
     align-items: center;  /* Centers the buttons vertically within the container */
     justify-content: flex-end;  /* Aligns buttons to the right */
-    gap: 10px;  /* Adds space between the buttons */
+    gap: 20px;  /* Adds space between the buttons */
+    padding-top: 20px;
 }
 
 .edit-btn, .delete-btn {
@@ -333,7 +333,6 @@ footer p{
     font-size: 16px;
     display: flex;
     align-items: center;  /* Ensures text and icons align perfectly in the middle */
-    padding-left: 20px;
 }
 
 .delete-btn {
