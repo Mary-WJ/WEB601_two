@@ -197,6 +197,7 @@ nav .profileIcon{
     margin: 0;
     padding-left: 20px;
     padding-top: 20px;
+    padding-bottom: 15px;
     border: none;
     font-size: 1.5em;
     font-weight: bold;
@@ -237,10 +238,124 @@ footer{
     padding: 15px;
     font-size: 15px;
     text-align: center;
-    background-color: rgb(87, 141, 202);
+    background-color: rgb(187, 175, 175);
 }
 
 footer p{
     margin: 0px;
     color: black;
 }
+
+
+/* search bar by filtering */
+
+#searhBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#searchInput{
+    padding: 10px;
+    width: 50%;
+    margin: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+#searchInput:focus{
+    outline: darkblue 3px solid;	
+}
+
+#search{
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: bisque;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#search:hover{
+    background-color: rgb(255, 196, 0);
+}
+
+
+#allNotes{
+    margin: 10px auto;
+    margin-bottom: 60px;
+    padding: 50px;
+    border: 10px solid #62458b;
+    background-color: rgb(230, 231, 230);
+    border-radius: 5px;
+    width: 60vw;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+
+
+
+#viewAll{
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 40px;
+} 
+
+
+.note{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px;
+    max-height: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;   
+} 
+
+.note-description{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.note-buttons {
+    display: flex;
+    align-items: center;  /* Centers the buttons vertically within the container */
+    justify-content: flex-end;  /* Aligns buttons to the right */
+    gap: 10px;  /* Adds space between the buttons */
+}
+
+.edit-btn, .delete-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;  /* Ensures text and icons align perfectly in the middle */
+    padding-left: 20px;
+}
+
+.delete-btn {
+    color: rgb(23, 6, 6); /* Bootstrap's button-danger color */
+    font-size: 30px; /* Adjust as necessary */
+}
+
+.edit-btn {
+    color: black; /* Bootstrap's button-success color */
+    font-size: 20px;
+    padding: 8px;
+    background-color: rgb(254, 201, 136);
+    border-radius: 8px;
+}
+
+
+.delete-btn:hover{
+    color: rgb(221, 100, 100);
+}
+
+
+.edit-btn:hover{
+    background-color: rgb(243, 190, 17);
+}
+
