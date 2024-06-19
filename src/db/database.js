@@ -1,6 +1,6 @@
 //database connection
 
-require('dotenv').config({ path: '../.env' }); //to connect to the .env file where the credentials are stored
+require('dotenv').config({ path: './../.env' }); //to connect to the .env file where the credentials are stored
 
 //initialize mangoose package
 const mongoose = require('mongoose');

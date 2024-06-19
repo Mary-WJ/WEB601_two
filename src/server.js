@@ -2,9 +2,9 @@
 require('dotenv').config({ path: '../.env' });
 
 //import the database connection function mongodb
-const { connectDB } = require('./database.js'); 
+const { connectDB } = require('./db/database.js'); 
 //the model schema is imported
-const Note = require('./model.js'); 
+const Note = require('./model/model.js'); 
 
 //initialize packages
 const mongoose = require('mongoose');

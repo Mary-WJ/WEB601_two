@@ -62,7 +62,7 @@ main .box{
     border: 1px solid rgb(227, 219, 219);
     border-radius: 20px;
     background-color: rgb(196, 172, 218);
-    margin: 50px;
+    margin: 30px;
     padding: 10px;
     width: 500px;
     justify-self: center;
@@ -75,7 +75,12 @@ form{
 
 
 form input{
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+
+}
+
+form .form-control{
+    padding: 10px;
 }
 
 form button{
@@ -262,7 +267,7 @@ footer p{
     margin: 20px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(237, 204, 162);
+    background-color: white;
 }
 
 #searchInput:focus{
@@ -272,7 +277,7 @@ footer p{
 #search{
     padding: 10px 15px;
     border-radius: 10px;
-    background-color: rgb(246, 204, 154);
+    background-color: whitesmoke;
     cursor: pointer;
     font-size: 20px;
 }
