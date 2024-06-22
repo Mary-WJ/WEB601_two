@@ -117,6 +117,20 @@ signup form */
     background-color: rgb(228, 163, 202);
 }
 
+#mainPage #logoutBtn{
+    font-size: 1.3em;
+    margin-left: 50px;
+    padding: 7px; 
+    color: black;
+    border: none;
+    border-radius: 10px;
+    
+}
+
+#mainPage .logout:hover{
+    background-color: plum;
+    
+}
 
 
 /* main page styling start here */

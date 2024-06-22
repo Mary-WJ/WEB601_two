@@ -1,9 +1,21 @@
 const notesContainer = document.getElementById('notes');
 const searchBar = document.getElementById('searchInput');
 
+
+//logout btn
+const logoutBtn = document.getElementById('logoutBtn');
+
 let notesData = []; // emapty Array to store all notes from database
 
 document.addEventListener('DOMContentLoaded', function () {
+    fetchNotes();
+
+
+    // Searchbar  functionality
+    searchBar.addEventListener('input', () => {
+        const filteredNotes = notesData.filter(note => note.title.toLowerCase().includes(searchBar.value.toLowerCase()));
+        displayNotes(filteredNotes); //this will display the filtered note depending on the title of the note
+    });
     
     // Function to display notes
     function displayNotes(notes) {
@@ -57,11 +69,12 @@ document.addEventListener('DOMContentLoaded', function () {
             deleteButton.addEventListener('click', () => {
                 // console.log("Delete button clicked for note ID:", note._id);
                 deleteNote(note._id, noteDiv);
+
             });
 
             //edit button listener
             editButton.addEventListener('click', () => {
-                window.location.href = `index.html?id=${note._id}`; // Redirect to create note page with note ID
+                editNote(note._id);
             });
             
 
@@ -71,22 +84,37 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Fetch notes from the server database
-    fetch("http://localhost:3000/api/notes")
-    .then(response => response.json())
-    .then(notes => {
-        notesData = notes; // Stored all the notes from the database to the empty array that was defined at the top
-        displayNotes(notesData); // Display all notes using the displayNotes() function at the above
-    })
-    .catch(error => {
-        console.error('Error fetching notes:', error);
-        notesContainer.innerHTML = '<p>Error loading notes.</p>';
-    });
+    function fetchNotes() {
+        const token = localStorage.getItem('token'); // Retrieve the stored token
+        if (!token) {
+            console.error('No token found, redirecting to login...');
+            window.location.href = 'login.html'; // Redirect to login if no token is found
+            return;
+        }
 
-    // Searchbar  functionality
-    searchBar.addEventListener('input', () => {
-        const filteredNotes = notesData.filter(note => note.title.toLowerCase().includes(searchBar.value.toLowerCase()));
-        displayNotes(filteredNotes); //this will display the filtered note depending on the title of the note
-    });
+        fetch("http://localhost:3000/api/notes", {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch notes');
+            }
+
+            return response.json();
+        })
+        .then(notes => {
+            notesData = notes;
+            displayNotes(notesData);
+        })
+        .catch(error => {
+            console.error('Error fetching notes:', error);
+            notesContainer.innerHTML = '<p>Error loading notes.</p>';
+        });
+    }
 
 });
 
@@ -95,7 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
 // Delete the note
 function deleteNote(noteId, noteDiv) {
     fetch(`http://localhost:3000/api/notes/${noteId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+        }
     })
     .then(response => {
         if (response.ok) {
@@ -126,4 +158,34 @@ function deleteNote(noteId, noteDiv) {
 
 
 
+function editNote(noteId) {
+    fetch(`http://localhost:3000/api/notes/${noteId}`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            console.error('Failed to fetch note');
+        }
+    })
+    .then(note => {
+        // Redirect to create note page with note ID
+        window.location.href = `index.html?id=${noteId}`;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
+}
+
+
+// Function to handle logout
+logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('token');
+    window.location.href = '../auth/login.html';
+})
