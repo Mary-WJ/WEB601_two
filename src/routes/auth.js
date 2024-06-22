@@ -81,8 +81,9 @@ router.post('/api/auth/login', async (req, res) => {
 
 
 
+//funtion for generating the token 
 const generateToken = (id) => {
-    return jwt.sign({id}, process.env.JWT_SECRET, { expiresIn: '30d'});
+    return jwt.sign({id}, process.env.JWT_SECRET, { expiresIn: '30d'}); //token exprires in 30 days
 }
 
-module.exports = router;
+module.exports = router; //export router
